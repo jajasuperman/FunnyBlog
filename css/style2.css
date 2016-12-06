@@ -1,0 +1,10 @@
+h1 {
+    font-family: 'Courier';
+    color: #424242;
+}
+
+p, label, figcaption {
+    font-family: 'Courier';
+    color: #616161;
+}
+
