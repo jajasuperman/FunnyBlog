@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>Sign Up</title>
+
+        <link href="../css/style1.css" rel="stylesheet" />
+        <link href="../css/style2.css" rel="stylesheet" />
+        
+        <script src="../js/egiaztatuSignUp.js"></script>
+
+    </head>
+
+    <body>
+
+        <table>
+            <tr>
+                <td width="8%">
+                    <h1>
+                        Sign Up
+                    </h1>
+                </td>
+                <td width="1%">                    
+                    <a href="login.php"> <button type="button">Login</button> </a>
+                </td>
+            </tr>
+        </table>
+
+        <hr />
+
+        <div class="login" style="margin: 0 auto; width: 50%;">
+            <form id="login" method="post" enctype="multipart/form-data" name="login" onsubmit="return egiaztatuSignUp()" action="signup.php">
+                <table>
+                    <tr>
+                        <td width="70%">
+                            <label class="col-sm-3" for="erabiltzailea">Erabiltzailea</label>
+                        </td>
+                        <td width="30%">
+                            <input type="text" id="erabiltzailea" name="erabiltzailea">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">Emaila</label>
+                        </td>
+                        <td>
+                            <input type="text" id="email" name="email"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pasahitza">Pasahitza</label>
+                        </td>
+                        <td>
+                            <input type="password" id="pasahitza" name="pasahitza"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pasahitza2">Pasahitza egiaztatu</label>
+                        </td>
+                        <td>
+                            <input type="password" id="pasahitza2" name="pasahitza2"><br>
+                        </td>
+                    </tr>
+                </table>
+
+                <div style="text-align:center;">
+                    <br />
+                    <input class="btnLogin" name="commit" value="Sign Up" type="submit">
+                    <br />
+                    <a href="login.php">Kontu bat daukat dagoeneko</a>
+                    <br /><br />
+                    <img src="../img/3f2.jpg" alt="rex"> 
+                </div>
+            </form>                                    
+        </div>
+    </body>
+</html>
