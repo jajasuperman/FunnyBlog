@@ -1,0 +1,8 @@
+<!DOCTYPE berriak [
+<!ELEMENT berriak (iruzkinak)*>
+<!ELEMENT iruzkinak (iruzkina)*>
+<!ATTLIST iruzkinak id ID #REQUIRED>
+<!ELEMENT iruzkina (egilea, mezua)>
+<!ELEMENT egilea (#PCDATA)>
+<!ELEMENT mezua (#PCDATA)>
+]>

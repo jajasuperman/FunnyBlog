@@ -40,3 +40,8 @@ input[type=text], input[type=password], input[type=file], input[type=email], sel
     box-sizing: border-box;
     font-family: 'Courier';
 }
+
+iframe {
+    width: 50%;
+    text-align:center;
+}
