@@ -4,33 +4,33 @@
         <meta charset="utf8mb4" />
         <title>emoji-picker Demo</title>        
 
-        <link href="css/cover.css" rel="stylesheet" />
+        <link href="../css/cover.css" rel="stylesheet" />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
 
-        <link href="css/style1.css" rel="stylesheet" />
-        <link href="css/style2.css" rel="stylesheet" />
-        <link href="css/post.css" rel="stylesheet" />
+        <link href="../css/style1.css" rel="stylesheet" />
+        <link href="../css/style2.css" rel="stylesheet" />
+        <link href="../css/post.css" rel="stylesheet" />
 
         <!-- Begin emoji-picker Stylesheets -->
-        <link href="lib/css/nanoscroller.css" rel="stylesheet" />
-        <link href="lib/css/emoji.css" rel="stylesheet" />
+        <link href="../lib/css/nanoscroller.css" rel="stylesheet" />
+        <link href="../lib/css/emoji.css" rel="stylesheet" />
         <!-- End emoji-picker Stylesheets -->
 
-        <script language="JavaScript" type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
+        <script language="JavaScript" type="text/javascript" src="../lib/js/jquery-3.1.1.min.js"></script>
 
         <script>
 
             function iruzkinakIkusi() {
                 if($('#gezia').attr('alt') == "arrow_down") {
-                    $.post("php/iruzkinakIkusi.php", {berriaID: 1},  function(data){                    
+                    $.post("../php/iruzkinakIkusi.php", {berriaID: 1},  function(data){                    
                         $("#iruzkinak").html(data);
                     });
-                    $('#gezia').attr('src','img/arrow_up.png');
+                    $('#gezia').attr('src','../img/arrow_up.png');
                     $('#gezia').attr('alt','arrow_up');
                 }
                 else {
                     $("#iruzkinak").html("");
-                    $('#gezia').attr('src','img/arrow_down.png');
+                    $('#gezia').attr('src','../img/arrow_down.png');
                     $('#gezia').attr('alt','arrow_down');
                 }
             }
@@ -43,7 +43,7 @@
 
         if(isset($_POST['id1'])) {    
 
-            include 'php/db.php';
+            include '../php/db.php';
 
             $conn = new mysqli($host, $username, $password, $db);
             $conn->query("SET character_set_client='utf8'");
@@ -76,11 +76,18 @@
     </head>
 
     <body>
+        <header class='main' id='h1'>
+            <a href="../index.html"><img style="width: 50%;" src="../img/goiburua.png" /></a>
+            <div class="userBtnDiv"> 
+                <a href="../php/login.php"><button class="userBtn" type="button">Login</button></a>            
+                <a href="../php/signup.php"><button class="userBtn" type="button">Sign Up</button></a>
+            </div>
+        </header>
 
         <div class="box">
             <!-- Izenburua -->
             <h2>
-                1. Memea
+                Mickey Trollface
             </h2>
             <!-- Irudia -->
             <div style="text-align: center;">
@@ -111,7 +118,7 @@
                         </h2>
                     </td>
                     <td style="vertical-align: middle; height: 100%;">
-                        <img id="gezia" src="img/arrow_down.png" alt="arrow_down" onclick="iruzkinakIkusi();"
+                        <img id="gezia" src="../img/arrow_down.png" alt="arrow_down" onclick="iruzkinakIkusi();"
                              style="width: 40%;"/>
                     </td>
                 </tr>
@@ -125,23 +132,30 @@
         <?php        
         if(isset($_SESSION['erabiltzailea'])) {
             echo "<div id='iruzkinBerria' class='box comment'>                
-                <form name='iruz' id='iruz' method='post' enctype='multipart/form-data' action='test.php'>
-                    <p class='lead emoji-picker-container'>
-                        <textarea name='id1' class='form-control textarea-control' rows='3' placeholder='Textarea with emoji Unicode input' data-emojiable='true' data-emoji-input='unicode'></textarea>
-                    </p>
-                    <input class='btnLogin' name='submit' value='Bidali' type='submit'>
-                </form>            
-            </div>";
+                    <form name='iruz' id='iruz' method='post' enctype='multipart/form-data' action='test.php'>
+                        <p class='lead emoji-picker-container'>
+                            <textarea name='id1' class='form-control textarea-control' rows='3' placeholder='Textarea with emoji Unicode input' data-emojiable='true' data-emoji-input='unicode'></textarea>
+                        </p>
+                        <input class='btnLogin' name='submit' value='Bidali' type='submit'>
+                    </form>            
+                </div>";
+        }
+        else {
+            echo "<div id='iruzkinBerria' class='box comment'>                
+                    <p>
+                        Iruzkinak idazteko <a href='../php/signup.php'>kontua sortu</a> edo <a href='../php/login.php'>kautotu</a> zaitez.
+                    </p>           
+                  </div>";
         }
         ?>
 
         <!-- Begin emoji-picker JavaScript -->
-        <script src="lib/js/nanoscroller.min.js"></script>
-        <script src="lib/js/tether.min.js"></script>
-        <script src="lib/js/config.js"></script>
-        <script src="lib/js/util.js"></script>
-        <script src="lib/js/jquery.emojiarea.js"></script>
-        <script src="lib/js/emoji-picker.js"></script>
+        <script src="../lib/js/nanoscroller.min.js"></script>
+        <script src="../lib/js/tether.min.js"></script>
+        <script src="../lib/js/config.js"></script>
+        <script src="../lib/js/util.js"></script>
+        <script src="../lib/js/jquery.emojiarea.js"></script>
+        <script src="../lib/js/emoji-picker.js"></script>
         <!-- End emoji-picker JavaScript -->
 
         <script>
@@ -149,7 +163,7 @@
                 // Initializes and creates emoji set from sprite sheet
                 window.emojiPicker = new EmojiPicker({
                     emojiable_selector: '[data-emojiable=true]',
-                    assetsPath: 'lib/img/',
+                    assetsPath: '../lib/img/',
                     popupButtonClasses: 'fa fa-smile-o'
                 });
                 // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields

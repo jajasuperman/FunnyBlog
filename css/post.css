@@ -54,3 +54,12 @@
 .bidaliBtn {
     width: auto;
 }
+
+.userBtnDiv {
+    text-align: center; 
+    float: right;
+}
+
+.userBtn {
+    width: auto; 
+}

@@ -6,50 +6,53 @@
 
         <link href="../css/style1.css" rel="stylesheet" />
         <link href="../css/style2.css" rel="stylesheet" />
-        
+
         <script src="../js/egiaztatuSignUp.js"></script>
 
         <?php
-            include 'db.php';
-            
-            if(isset($_POST["erabiltzailea"])) {
-                require_once('recaptchalib.php');
-                $privatekey = "6LdksgwUAAAAAOSoWe4y9QEuBXoQoUF2kIkFwIN8";
-                $resp = recaptcha_check_answer ($privatekey,
-                                                $_SERVER["REMOTE_ADDR"],
-                                                $_POST["recaptcha_challenge_field"],
-                                                $_POST["recaptcha_response_field"]);
+        include 'db.php';
 
-                if (!$resp->is_valid) {
-                    die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-                         "(reCAPTCHA said: " . $resp->error . ")");
-                } else {
-                    
-                    $fitx = '../xml/iruzkinak.xml';
+        if(isset($_POST["erabiltzailea"])) {
+            require_once('recaptchalib.php');
+            $privatekey = "6LdksgwUAAAAAOSoWe4y9QEuBXoQoUF2kIkFwIN8";
+            $resp = recaptcha_check_answer ($privatekey,
+                                            $_SERVER["REMOTE_ADDR"],
+                                            $_POST["recaptcha_challenge_field"],
+                                            $_POST["recaptcha_response_field"]);
 
-                    $xml = simplexml_load_file($fitx);
+            if (!$resp->is_valid) {
+                die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+                     "(reCAPTCHA said: " . $resp->error . ")");
+            } else {
 
-                    $elementua = $xml->addChild('erabiltzailea');
+                $fitx = '../xml/iruzkinak.xml';
 
-                    $elementua->addChild('Erabiltzaile', $_POST['erabiltzailea']);
-                    $elementua->addChild('Emaila', $_POST['email']);
-                    $elementua->addChild('Pasahitza', $_POST['pasahitza']);
-                                    
-                    $xml->asXML($fitx);
-                    
-                    $domxml = new DOMDocument('1.0');
-                    $domxml->preserveWhiteSpace = false;
-                    $domxml->formatOutput = true;
-                    /* @var $xml SimpleXMLElement */
-                    $domxml->loadXML($xml->asXML());
-                    $domxml->save($fitx);
-                }
+                $xml = simplexml_load_file($fitx);
+
+                $elementua = $xml->addChild('erabiltzailea');
+
+                $elementua->addChild('Erabiltzaile', $_POST['erabiltzailea']);
+                $elementua->addChild('Emaila', $_POST['email']);
+                $elementua->addChild('Pasahitza', $_POST['pasahitza']);
+
+                $xml->asXML($fitx);
+
+                $domxml = new DOMDocument('1.0');
+                $domxml->preserveWhiteSpace = false;
+                $domxml->formatOutput = true;
+                /* @var $xml SimpleXMLElement */
+                $domxml->loadXML($xml->asXML());
+                $domxml->save($fitx);
             }
+        }
         ?>
 
     </head>
 
     <body>
+        <header class='main' id='h1'>
+            <a href="../test.php"><img style="width: 50%;" src="../img/goiburua.png" /></a>
+        </header>
 
         <table>
             <tr>

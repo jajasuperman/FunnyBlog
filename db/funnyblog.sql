@@ -40,25 +40,6 @@ INSERT INTO `berria` (`ID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `erabiltzaileak`
---
-
-CREATE TABLE `erabiltzaileak` (
-  `Izena` varchar(100) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Pasahitza` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `erabiltzaileak`
---
-
-INSERT INTO `erabiltzaileak` (`Izena`, `Email`, `Pasahitza`) VALUES
-('Thadah', 'ju', '1234abcd');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `iruzkina`
 --
 
@@ -79,13 +60,6 @@ CREATE TABLE `iruzkina` (
 --
 ALTER TABLE `berria`
   ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `erabiltzaileak`
---
-ALTER TABLE `erabiltzaileak`
-  ADD PRIMARY KEY (`Izena`),
-  ADD UNIQUE KEY `Email` (`Email`);
 
 --
 -- Indexes for table `iruzkina`

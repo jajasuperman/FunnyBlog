@@ -8,3 +8,9 @@ p, label, figcaption {
     color: #616161;
 }
 
+a {
+    color: #616161;
+}
+a:hover {
+    color: #919191;
+}
