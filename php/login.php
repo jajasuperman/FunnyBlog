@@ -10,21 +10,36 @@
         <script src="../js/egiaztatuLogin.js"></script>
 
         <?php
-        if(isset($_POST["erabiltzailea"])) {
-            require_once('recaptchalib.php');
-            $privatekey = "6LdksgwUAAAAAOSoWe4y9QEuBXoQoUF2kIkFwIN8";
-            $resp = recaptcha_check_answer ($privatekey,
-                                            $_SERVER["REMOTE_ADDR"],
-                                            $_POST["recaptcha_challenge_field"],
-                                            $_POST["recaptcha_response_field"]);
+            include 'db.php';
+            
+            if(isset($_POST["erabiltzailea"])) {
+                require_once('recaptchalib.php');
+                $privatekey = "6LdksgwUAAAAAOSoWe4y9QEuBXoQoUF2kIkFwIN8";
+                $resp = recaptcha_check_answer ($privatekey,
+                                                $_SERVER["REMOTE_ADDR"],
+                                                $_POST["recaptcha_challenge_field"],
+                                                $_POST["recaptcha_response_field"]);
 
-            if (!$resp->is_valid) {
-                die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-                     "(reCAPTCHA said: " . $resp->error . ")");
-            } else {
+                if (!$resp->is_valid) {
+                    die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+                         "(reCAPTCHA said: " . $resp->error . ")");
+                } else {
 
+                    $xml = '../xml/iruzkinak.xml';
+                    $erabiltzaileak= simplexml_load_file($xml);
+
+                    foreach ($erabiltzaileak->children() as $erabiltzaile) {    
+                        if (($erabiltzaile->Erabiltzaile) == ($_POST["erabiltzailea"]) && ($erabiltzaile->Pasahitza) == ($_POST["pasahitza"])) {
+                            session_start();
+                            $_SESSION['erabiltzailea'] = $_POST["erabiltzailea"];
+                            header("Location: ../test.php");
+                        }
+                        else{
+                            echo 'MEGAERROR';
+                        }
+                    }
+                }
             }
-        }
         ?>
 
     </head>

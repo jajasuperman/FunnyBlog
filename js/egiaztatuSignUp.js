@@ -1,4 +1,4 @@
-function egiaztatuSignUp() {
+;function egiaztatuSignUp() {
     var erabil = document.getElementById("erabiltzailea").value;
     var email = document.getElementById("email").value;
     var pass = document.getElementById("pasahitza").value;
@@ -21,8 +21,10 @@ function egiaztatuSignUp() {
         return false;
     }
     else if(pass !== pass2) {
-        alert("Pasahitzak ez dira berdinak. Berriz sar itzazu.")
+        alert("Pasahitzak ez dira berdinak. Berriz sar itzazu.");
+        return false;
     }
+    
     else {
         return true;
     }    

@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
-<!DOCTYPE berriak SYSTEM "iruzkinak.dtd">
-
-<berriak>
-    <iruzkinak id="id1">
-        <iruzkina>
-            <egilea>
-                1. Erabiltzailea
-            </egilea>
-            <mezua>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nulla dui, gravida ac neque eu, dapibus fermentum purus. Donec molestie viverra porttitor. In ultricies, dui sit amet pellentesque mattis, sem sapien dapibus mi, quis hendrerit felis ex id turpis. Curabitur mollis dolor velit, vitae consequat leo dapibus ac. Donec sit amet ornare enim. Integer in sollicitudin elit. Sed sagittis, quam quis fringilla commodo, odio nunc pharetra ante, nec tempor augue mi eu eros. Maecenas interdum metus sit amet facilisis imperdiet. Aliquam eleifend vel dolor varius vehicula. 
-            </mezua>
-        </iruzkina>
-        <iruzkina>
-            <egilea>
-                2. Erabiltzailea
-            </egilea>
-            <mezua>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nulla dui, gravida ac neque eu, dapibus fermentum purus. Donec molestie viverra porttitor. In ultricies, dui sit amet pellentesque mattis, sem sapien dapibus mi, quis hendrerit felis ex id turpis. Curabitur mollis dolor velit, vitae consequat leo dapibus ac. Donec sit amet ornare enim. Integer in sollicitudin elit. Sed sagittis, quam quis fringilla commodo, odio nunc pharetra ante, nec tempor augue mi eu eros. Maecenas interdum metus sit amet facilisis imperdiet. Aliquam eleifend vel dolor varius vehicula. 
-            </mezua>
-        </iruzkina>
-    </iruzkinak>
-
-    <iruzkinak id="id2">
-        <iruzkina>
-            <egilea>
-                1. Erabiltzailea
-            </egilea>
-            <mezua>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nulla dui, gravida ac neque eu, dapibus fermentum purus. Donec molestie viverra porttitor. In ultricies, dui sit amet pellentesque mattis, sem sapien dapibus mi, quis hendrerit felis ex id turpis. Curabitur mollis dolor velit, vitae consequat leo dapibus ac. Donec sit amet ornare enim. Integer in sollicitudin elit. Sed sagittis, quam quis fringilla commodo, odio nunc pharetra ante, nec tempor augue mi eu eros. Maecenas interdum metus sit amet facilisis imperdiet. Aliquam eleifend vel dolor varius vehicula. 
-            </mezua>
-        </iruzkina>
-    </iruzkinak>
-
-</berriak>
+<erabiltzaileak>
+  <erabiltzailea>
+    <Erabiltzaile>Thadah</Erabiltzaile>
+    <Emaila>a</Emaila>
+    <Pasahitza>a</Pasahitza>
+  </erabiltzailea>
+  <erabiltzailea>
+    <Erabiltzaile>a</Erabiltzaile>
+    <Emaila>a123456</Emaila>
+    <Pasahitza>123456</Pasahitza>
+  </erabiltzailea>
+</erabiltzaileak>

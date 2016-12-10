@@ -9,6 +9,44 @@
         
         <script src="../js/egiaztatuSignUp.js"></script>
 
+        <?php
+            include 'db.php';
+            
+            if(isset($_POST["erabiltzailea"])) {
+                require_once('recaptchalib.php');
+                $privatekey = "6LdksgwUAAAAAOSoWe4y9QEuBXoQoUF2kIkFwIN8";
+                $resp = recaptcha_check_answer ($privatekey,
+                                                $_SERVER["REMOTE_ADDR"],
+                                                $_POST["recaptcha_challenge_field"],
+                                                $_POST["recaptcha_response_field"]);
+
+                if (!$resp->is_valid) {
+                    die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
+                         "(reCAPTCHA said: " . $resp->error . ")");
+                } else {
+                    
+                    $fitx = '../xml/iruzkinak.xml';
+
+                    $xml = simplexml_load_file($fitx);
+
+                    $elementua = $xml->addChild('erabiltzailea');
+
+                    $elementua->addChild('Erabiltzaile', $_POST['erabiltzailea']);
+                    $elementua->addChild('Emaila', $_POST['email']);
+                    $elementua->addChild('Pasahitza', $_POST['pasahitza']);
+                                    
+                    $xml->asXML($fitx);
+                    
+                    $domxml = new DOMDocument('1.0');
+                    $domxml->preserveWhiteSpace = false;
+                    $domxml->formatOutput = true;
+                    /* @var $xml SimpleXMLElement */
+                    $domxml->loadXML($xml->asXML());
+                    $domxml->save($fitx);
+                }
+            }
+        ?>
+
     </head>
 
     <body>
@@ -66,6 +104,13 @@
                 </table>
 
                 <div style="text-align:center;">
+                    <br />
+                    <?php
+                    require_once('recaptchalib.php');
+                    $publickey = "6LdksgwUAAAAAHqsYsNXZogHK42vrCSEfFV_xM5x"; // you got this from the signup page
+                    echo recaptcha_get_html($publickey);
+                    ?>
+
                     <br />
                     <input class="btnLogin" name="commit" value="Sign Up" type="submit">
                     <br />

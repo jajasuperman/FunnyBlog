@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf8mb4" />
         <title>emoji-picker Demo</title>        
         
         <link href="css/cover.css" rel="stylesheet" />
@@ -15,6 +15,42 @@
         <link href="lib/css/nanoscroller.css" rel="stylesheet" />
         <link href="lib/css/emoji.css" rel="stylesheet" />
         <!-- End emoji-picker Stylesheets -->
+
+        <?php
+    
+            if(isset($_POST['id1'])) {    
+
+                include 'php/db.php';
+
+                $conn = new mysqli($host, $username, $password, $db);
+                $conn->query("SET character_set_client='utf8'");
+                $conn->query("SET character_set_results='utf8'");
+                $conn->query("set collation_connection='utf8_general_ci'");
+
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+                session_start();
+
+                $sql = "INSERT INTO iruzkina (ID, Iruzkina, BerriaID, Egilea, Data)
+                VALUES(
+                    DEFAULT,
+                    '$_POST[id1]', 
+                    1, 
+                    '$_SESSION[erabiltzailea]',
+                    '2014-11-22'
+                )";
+                echo $sql;
+                if ($conn->query($sql) === TRUE) {
+                    echo "Ruka";
+                } else {
+                    echo "H5";
+                }
+
+                $conn->close();
+            }
+        ?>
+
 
     </head>
 
@@ -70,17 +106,21 @@
         
         <!-- Iruzkin berria sartzeko -->
         
-        <div id="iruzkinBerria" class="box comment">
-            <h5>
-                Iruzkin berria sartu:
-            </h5>
-            <form>
-                <p class="lead emoji-picker-container">
-                    <textarea class="form-control textarea-control" rows="3" placeholder="Textarea with emoji Unicode input" data-emojiable="true" data-emoji-input="unicode"></textarea>
-                </p>
-                <button class="bidaliBtn" type="button">Bidali</button>
-            </form>            
-        </div>
+        <?php
+        session_start();
+        if(isset($_SESSION['erabiltzailea'])) {
+            echo "<div id='iruzkinBerria' class='box comment'>                
+                <form name='iruz' id='iruz' method='post' enctype='multipart/form-data' action='test.php'>
+                    <p class='lead emoji-picker-container'>
+                        <textarea name='id1' class='form-control textarea-control' rows='3' placeholder='Textarea with emoji Unicode input' data-emojiable='true' data-emoji-input='unicode'></textarea>
+                    </p>
+                    <input class='btnLogin' name='submit' value='Bidali' type='submit'>
+                </form>            
+            </div>";
+        }
+
+
+        ?>
 
         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <!-- Begin emoji-picker JavaScript -->
