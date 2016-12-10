@@ -7,7 +7,7 @@ $db = 'u882253491_wsra';
 */
 $host = 'localhost';
 $username = 'root';
-$password = '1234';
+$password = '';
 $db = 'funnyblog';
 
 $conn = new mysqli($host, $username, $password, $db);

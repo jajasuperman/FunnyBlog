@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf8mb4" />
         <title>emoji-picker Demo</title>        
-        
+
         <link href="css/cover.css" rel="stylesheet" />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
-        
+
         <link href="css/style1.css" rel="stylesheet" />
         <link href="css/style2.css" rel="stylesheet" />
         <link href="css/post.css" rel="stylesheet" />
@@ -16,39 +16,60 @@
         <link href="lib/css/emoji.css" rel="stylesheet" />
         <!-- End emoji-picker Stylesheets -->
 
-        <?php
-    
-            if(isset($_POST['id1'])) {    
+        <script language="JavaScript" type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
 
-                include 'php/db.php';
+        <script>
 
-                $conn = new mysqli($host, $username, $password, $db);
-                $conn->query("SET character_set_client='utf8'");
-                $conn->query("SET character_set_results='utf8'");
-                $conn->query("set collation_connection='utf8_general_ci'");
-
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
+            function iruzkinakIkusi() {
+                if($('#gezia').attr('alt') == "arrow_down") {
+                    $.post("php/iruzkinakIkusi.php", {berriaID: 1},  function(data){                    
+                        $("#iruzkinak").html(data);
+                    });
+                    $('#gezia').attr('src','img/arrow_up.png');
+                    $('#gezia').attr('alt','arrow_up');
                 }
-                session_start();
+                else {
+                    $("#iruzkinak").html("");
+                    $('#gezia').attr('src','img/arrow_down.png');
+                    $('#gezia').attr('alt','arrow_down');
+                }
+            }
+        </script>
 
-                $sql = "INSERT INTO iruzkina (ID, Iruzkina, BerriaID, Egilea, Data)
+
+        <?php
+
+        session_start();
+
+        if(isset($_POST['id1'])) {    
+
+            include 'php/db.php';
+
+            $conn = new mysqli($host, $username, $password, $db);
+            $conn->query("SET character_set_client='utf8'");
+            $conn->query("SET character_set_results='utf8'");
+            $conn->query("set collation_connection='utf8_general_ci'");
+
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            $sql = "INSERT INTO iruzkina (ID, Iruzkina, BerriaID, Egilea, Data)
                 VALUES(
                     DEFAULT,
                     '$_POST[id1]', 
                     1, 
                     '$_SESSION[erabiltzailea]',
                     '2014-11-22'
-                )";
-                echo $sql;
-                if ($conn->query($sql) === TRUE) {
-                    echo "Ruka";
-                } else {
-                    echo "H5";
-                }
-
-                $conn->close();
+                )";                
+            if ($conn->query($sql) === TRUE) {
+                echo "Ruka";
+            } else {
+                echo "H5";
             }
+
+            $conn->close();
+        }
         ?>
 
 
@@ -67,7 +88,7 @@
             </div>
 
             <hr />
-            
+
             <!-- Informazioa -->
             <h3>
                 Info
@@ -78,36 +99,30 @@
             </p>
 
         </div>
-        
+
         <!-- Iruzkinak -->
 
-        <div class="box iruzkina">
-            <h2>
-                IRUZKINAK
-            </h2>
+        <div class="box iruzkina">            
+            <table>
+                <tr>
+                    <td>
+                        <h2>
+                            IRUZKINAK
+                        </h2>
+                    </td>
+                    <td style="vertical-align: middle; height: 100%;">
+                        <img id="gezia" src="img/arrow_down.png" alt="arrow_down" onclick="iruzkinakIkusi();"
+                             style="width: 40%;"/>
+                    </td>
+                </tr>
+            </table>
         </div>
 
-        <div class="box comment">
-            <h5>
-                1. Erabiltzailea
-            </h5>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nulla dui, gravida ac neque eu, dapibus fermentum purus. Donec molestie viverra porttitor. In ultricies, dui sit amet pellentesque mattis, sem sapien dapibus mi, quis hendrerit felis ex id turpis. Curabitur mollis dolor velit, vitae consequat leo dapibus ac. Donec sit amet ornare enim. Integer in sollicitudin elit. Sed sagittis, quam quis fringilla commodo, odio nunc pharetra ante, nec tempor augue mi eu eros. Maecenas interdum metus sit amet facilisis imperdiet. Aliquam eleifend vel dolor varius vehicula.
-            </p>
-        </div>
-        <div class="box comment">
-            <h5>
-                2. Erabiltzailea
-            </h5>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nulla dui, gravida ac neque eu, dapibus fermentum purus. Donec molestie viverra porttitor. In ultricies, dui sit amet pellentesque mattis, sem sapien dapibus mi, quis hendrerit felis ex id turpis. Curabitur mollis dolor velit, vitae consequat leo dapibus ac. Donec sit amet ornare enim. Integer in sollicitudin elit. Sed sagittis, quam quis fringilla commodo, odio nunc pharetra ante, nec tempor augue mi eu eros. Maecenas interdum metus sit amet facilisis imperdiet. Aliquam eleifend vel dolor varius vehicula.
-            </p>
-        </div>
-        
+        <div id="iruzkinak"></div>
+
         <!-- Iruzkin berria sartzeko -->
-        
-        <?php
-        session_start();
+
+        <?php        
         if(isset($_SESSION['erabiltzailea'])) {
             echo "<div id='iruzkinBerria' class='box comment'>                
                 <form name='iruz' id='iruz' method='post' enctype='multipart/form-data' action='test.php'>
@@ -118,11 +133,8 @@
                 </form>            
             </div>";
         }
-
-
         ?>
 
-        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
         <!-- Begin emoji-picker JavaScript -->
         <script src="lib/js/nanoscroller.min.js"></script>
         <script src="lib/js/tether.min.js"></script>
