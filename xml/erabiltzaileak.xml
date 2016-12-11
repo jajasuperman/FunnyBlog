@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
 <!DOCTYPE erabiltzaileak SYSTEM "erabiltzaileak.dtd">
-
 <erabiltzaileak>
   <erabiltzailea>
     <Erabiltzaile>Thadah</Erabiltzaile>
@@ -11,6 +9,11 @@
   <erabiltzailea>
     <Erabiltzaile>a</Erabiltzaile>
     <Emaila>a123456</Emaila>
+    <Pasahitza>123456</Pasahitza>
+  </erabiltzailea>
+  <erabiltzailea>
+    <Erabiltzaile>eeee</Erabiltzaile>
+    <Emaila>eeee@gmail.com</Emaila>
     <Pasahitza>123456</Pasahitza>
   </erabiltzailea>
 </erabiltzaileak>

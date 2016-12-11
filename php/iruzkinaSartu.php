@@ -5,15 +5,6 @@ if(isset($_POST['id1'])) {
 
     include 'db.php';
 
-    $conn = new mysqli($host, $username, $password, $db);
-    $conn->query("SET character_set_client='utf8'");
-    $conn->query("SET character_set_results='utf8'");
-    $conn->query("set collation_connection='utf8_general_ci'");
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
     $sql = "INSERT INTO iruzkina (ID, Iruzkina, BerriaID, Egilea, Data)
             VALUES(
             DEFAULT,
@@ -22,6 +13,7 @@ if(isset($_POST['id1'])) {
             '$_SESSION[erabiltzailea]',
             '".date("Y-m-d H:i:s")."'
             )";
+    echo $sql;
     if ($conn->query($sql) === TRUE) {
         echo "<script type='text/javascript'>alert('Iruzkina ondo gorde da.');</script>";
     } else {
