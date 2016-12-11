@@ -25,14 +25,14 @@
                      "(reCAPTCHA said: " . $resp->error . ")");
             } else {
 
-                $xml = '../xml/iruzkinak.xml';
+                $xml = '../xml/erabiltzaileak.xml';
                 $erabiltzaileak= simplexml_load_file($xml);
 
                 foreach ($erabiltzaileak->children() as $erabiltzaile) {    
                     if (($erabiltzaile->Erabiltzaile) == ($_POST["erabiltzailea"]) && ($erabiltzaile->Pasahitza) == ($_POST["pasahitza"])) {
                         session_start();
                         $_SESSION['erabiltzailea'] = $_POST["erabiltzailea"];
-                        header("Location: ../test.php");
+                        header("Location: ../index.html");
                     }
                     else{
                         echo 'MEGAERROR';

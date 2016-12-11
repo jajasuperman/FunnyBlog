@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!DOCTYPE erabiltzaileak SYSTEM "erabiltzaileak.dtd">
+
 <erabiltzaileak>
   <erabiltzailea>
     <Erabiltzaile>Thadah</Erabiltzaile>

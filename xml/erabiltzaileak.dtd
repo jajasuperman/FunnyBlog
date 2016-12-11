@@ -1,0 +1,7 @@
+<!DOCTYPE erabiltzaileak [
+<!ELEMENT erabiltzaileak (erabiltzailea)*>
+<!ELEMENT erabiltzailea (Erabiltzaile, Emaila, Pasahitza)>
+<!ELEMENT Erabiltzaile (#PCDATA)>
+<!ELEMENT Emaila (#PCDATA)>
+<!ELEMENT Pasahitza (#PCDATA)>
+]>

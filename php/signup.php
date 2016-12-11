@@ -25,7 +25,7 @@
                      "(reCAPTCHA said: " . $resp->error . ")");
             } else {
 
-                $fitx = '../xml/iruzkinak.xml';
+                $fitx = '../xml/erabiltzaileak.xml';
 
                 $xml = simplexml_load_file($fitx);
 
@@ -43,6 +43,8 @@
                 /* @var $xml SimpleXMLElement */
                 $domxml->loadXML($xml->asXML());
                 $domxml->save($fitx);
+                
+                header("Location: ../index.html");
             }
         }
         ?>
