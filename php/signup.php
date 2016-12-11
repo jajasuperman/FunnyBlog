@@ -51,7 +51,7 @@
 
     <body>
         <header class='main' id='h1'>
-            <a href="../test.php"><img style="width: 50%;" src="../img/goiburua.png" /></a>
+            <a href="../index.html"><img style="width: 50%;" src="../img/goiburua.png" /></a>
         </header>
 
         <table>
@@ -74,7 +74,7 @@
                 <table>
                     <tr>
                         <td width="70%">
-                            <label class="col-sm-3" for="erabiltzailea">Erabiltzailea</label>
+                            <label for="erabiltzailea">Erabiltzailea</label>
                         </td>
                         <td width="30%">
                             <input type="text" id="erabiltzailea" name="erabiltzailea">
@@ -85,7 +85,7 @@
                             <label for="email">Emaila</label>
                         </td>
                         <td>
-                            <input type="text" id="email" name="email"><br>
+                            <input type="email" id="email" name="email"><br>
                         </td>
                     </tr>
                     <tr>
@@ -117,7 +117,7 @@
                     <br />
                     <input class="btnLogin" name="commit" value="Sign Up" type="submit">
                     <br />
-                    <a href="login.php">Kontu bat daukat dagoeneko</a>
+                    <a href="login.php" style="font-weight: bold; color: black;">Kontu bat daukat dagoeneko</a>
                     <br /><br />
                     <img src="../img/3f2.jpg" alt="rex"> 
                 </div>

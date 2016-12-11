@@ -9,13 +9,16 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "
         <div class='box comment'>
-            <h5>".$row["Egilea"]."</h5>
+            <h4>".$row["Egilea"]."</h4>
             <p>".$row["Iruzkina"]."</p>
+            <h6>".$row["Data"]."</h6>
         </div>";
     }    
 }
 else {
-    echo "Iruzkinik ez :(";
+    echo "<div class='box comment'>
+            Iruzkinik ez :(
+          </div>";
 }    
 
 $conn->close();

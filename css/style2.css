@@ -5,7 +5,12 @@ h1 {
 
 p, label, figcaption {
     font-family: 'Courier';
-    color: #616161;
+}
+
+label {
+    text-shadow: 0 0 3px #FFFFFF, 0 0 5px #FFFFFF;
+    color: black;
+    font-weight: bold;
 }
 
 a {

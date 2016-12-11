@@ -24,18 +24,24 @@
     </head>
 
     <body>
-        <?php include '../php/goiburua.php'; ?>
+        <header class='main' id='h1'>
+            <a href="../index.html"><img style="width: 50%;" src="../img/goiburua.png" /></a>
+            <div class="userBtnDiv"> 
+                <a href="../php/login.php"><button class="userBtn" type="button">Login</button></a>            
+                <a href="../php/signup.php"><button class="userBtn" type="button">Sign Up</button></a>
+            </div>
+        </header>
 
         <div class="box">
 
             <!-- Izenburua -->
             <h2>
-                Mickey Trollface
+                Dolan
             </h2>
 
             <!-- Irudia -->
             <div style="text-align: center;">
-                <img src="http://i0.kym-cdn.com/photos/images/newsfeed/000/115/161/936.jpg" width="400px" alt="irudia"/>
+                <img src="http://i2.kym-cdn.com/entries/icons/original/000/003/549/image.jpeg" width="400px" alt="irudia"/>
             </div>
 
             <hr />

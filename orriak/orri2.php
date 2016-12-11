@@ -17,61 +17,9 @@
         <!-- End emoji-picker Stylesheets -->
 
         <script language="JavaScript" type="text/javascript" src="../lib/js/jquery-3.1.1.min.js"></script>
+        <script language="JavaScript" type="text/javascript" src="../js/iruzkinakIkusi.js"></script>
 
-        <script>
-
-            function iruzkinakIkusi() {
-                if($('#gezia').attr('alt') == "arrow_down") {
-                    $.post("../php/iruzkinakIkusi.php", {berriaID: 2},  function(data){                    
-                        $("#iruzkinak").html(data);
-                    });
-                    $('#gezia').attr('src','../img/arrow_up.png');
-                    $('#gezia').attr('alt','arrow_up');
-                }
-                else {
-                    $("#iruzkinak").html("");
-                    $('#gezia').attr('src','../img/arrow_down.png');
-                    $('#gezia').attr('alt','arrow_down');
-                }
-            }
-        </script>
-
-
-        <?php
-
-        session_start();
-
-        if(isset($_POST['id1'])) {    
-
-            include '../php/db.php';
-
-            $conn = new mysqli($host, $username, $password, $db);
-            $conn->query("SET character_set_client='utf8'");
-            $conn->query("SET character_set_results='utf8'");
-            $conn->query("set collation_connection='utf8_general_ci'");
-
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            $sql = "INSERT INTO iruzkina (ID, Iruzkina, BerriaID, Egilea, Data)
-                VALUES(
-                    DEFAULT,
-                    '$_POST[id1]', 
-                    1, 
-                    '$_SESSION[erabiltzailea]',
-                    '2014-11-22'
-                )";                
-            if ($conn->query($sql) === TRUE) {
-                echo "Ruka";
-            } else {
-                echo "H5";
-            }
-
-            $conn->close();
-        }
-        ?>
-
+        <?php include '../php/iruzkinaSartu.php'; ?>
 
     </head>
 
@@ -85,13 +33,14 @@
         </header>
 
         <div class="box">
+
             <!-- Izenburua -->
             <h2>
                 Lenny Face
             </h2>
             <!-- Irudia -->
             <div style="text-align: center;">
-                <img src="http://www.lennyfaces.net/static/og-image.png" width="400px" alt="test"/>
+                <img src="http://www.lennyfaces.net/static/og-image.png" width="400px" alt="irudia"/>
             </div>
 
             <hr />
@@ -107,47 +56,8 @@
 
         </div>
 
-        <!-- Iruzkinak -->
-
-        <div class="box iruzkina">            
-            <table>
-                <tr>
-                    <td>
-                        <h2>
-                            IRUZKINAK
-                        </h2>
-                    </td>
-                    <td style="vertical-align: middle; height: 100%;">
-                        <img id="gezia" src="../img/arrow_down.png" alt="arrow_down" onclick="iruzkinakIkusi();"
-                             style="width: 40%;"/>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div id="iruzkinak"></div>
-
-        <!-- Iruzkin berria sartzeko -->
-
-        <?php        
-        if(isset($_SESSION['erabiltzailea'])) {
-            echo "<div id='iruzkinBerria' class='box comment'>                
-                    <form name='iruz' id='iruz' method='post' enctype='multipart/form-data' action='test.php'>
-                        <p class='lead emoji-picker-container'>
-                            <textarea name='id1' class='form-control textarea-control' rows='3' placeholder='Textarea with emoji Unicode input' data-emojiable='true' data-emoji-input='unicode'></textarea>
-                        </p>
-                        <input class='btnLogin' name='submit' value='Bidali' type='submit'>
-                    </form>            
-                </div>";
-        }
-        else {
-            echo "<div id='iruzkinBerria' class='box comment'>                
-                    <p>
-                        Iruzkinak idazteko <a href='../php/signup.php'>kontua sortu</a> edo <a href='../php/login.php'>kautotu</a> zaitez.
-                    </p>           
-                  </div>";
-        }
-        ?>
+        <!-- Iruzkinak -->                
+        <?php include '../php/iruzkinakPanel.php'; ?>
 
         <!-- Begin emoji-picker JavaScript -->
         <script src="../lib/js/nanoscroller.min.js"></script>
@@ -159,16 +69,13 @@
         <!-- End emoji-picker JavaScript -->
 
         <script>
-            $(function() {
-                // Initializes and creates emoji set from sprite sheet
+            // Emoji aukeraketa
+            $(function() {                
                 window.emojiPicker = new EmojiPicker({
                     emojiable_selector: '[data-emojiable=true]',
                     assetsPath: '../lib/img/',
                     popupButtonClasses: 'fa fa-smile-o'
-                });
-                // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-                // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-                // It can be called as many times as necessary; previously converted input fields will not be converted again
+                });                
                 window.emojiPicker.discover();
             });
         </script>

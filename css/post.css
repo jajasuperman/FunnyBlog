@@ -6,8 +6,13 @@
     margin-bottom: 15px !important;
     clear: both;
     background-color: #FFF;
-
 }
+
+.index:hover{
+   background-color:#AAA;
+}
+
+
 
 .iruzkina {
     padding-top: 0px;

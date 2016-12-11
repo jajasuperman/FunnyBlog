@@ -46,7 +46,7 @@
 
     <body>
         <header class='main' id='h1'>
-            <a href="../test.php"><img style="width: 50%;" src="../img/goiburua.png" /></a>
+            <a href="../index.html"><img style="width: 50%;" src="../img/goiburua.png" /></a>
         </header>
         
         <table>
