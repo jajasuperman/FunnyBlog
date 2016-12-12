@@ -1,9 +1,9 @@
 <?php
 echo "<header class='main' id='h1'>
-            <a href='../index.html'><img style='width: 50%;' src='../img/goiburua.png' /></a>
+            <img style='width: 50%;' alt='logo' src='../img/goiburua.png' onclick=\"location.href='../index.html';\"/>
             <div class='userBtnDiv'> 
-                <a href='../php/login.php'><button class='userBtn' type='button'>Login</button></a>            
-                <a href='../php/signup.php'><button class='userBtn' type='button'>Sign Up</button></a>
+                <button class='userBtn' type='button' onclick=\"location.href='../php/login.php';\">Login</button>            
+                <button class='userBtn' type='button' onclick=\"location.href='../php/signup.php';\">Sign Up</button>
             </div>
         </header>";
 ?>

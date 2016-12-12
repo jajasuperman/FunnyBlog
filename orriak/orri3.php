@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta charset="utf8mb4" />
+        <meta charset="utf-8" />
         <title>emoji-picker Demo</title>        
 
         <link href="../css/cover.css" rel="stylesheet" />
@@ -16,21 +16,15 @@
         <link href="../lib/css/emoji.css" rel="stylesheet" />
         <!-- End emoji-picker Stylesheets -->
 
-        <script language="JavaScript" type="text/javascript" src="../lib/js/jquery-3.1.1.min.js"></script>
-        <script language="JavaScript" type="text/javascript" src="../js/iruzkinakIkusi.js"></script>
+        <script type="text/javascript" src="../lib/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="../js/iruzkinakIkusi.js"></script>
 
         <?php include '../php/iruzkinaSartu.php'; ?>
 
     </head>
 
     <body>
-        <header class='main' id='h1'>
-            <a href="../index.html"><img style="width: 50%;" src="../img/goiburua.png" /></a>
-            <div class="userBtnDiv"> 
-                <a href="../php/login.php"><button class="userBtn" type="button">Login</button></a>            
-                <a href="../php/signup.php"><button class="userBtn" type="button">Sign Up</button></a>
-            </div>
-        </header>
+        <?php include '../php/goiburua.php'; ?>
 
         <div class="box">
 
@@ -41,7 +35,7 @@
 
             <!-- Irudia -->
             <div style="text-align: center;">
-                <img src="http://i2.kym-cdn.com/entries/icons/original/000/003/549/image.jpeg" width="400px" alt="irudia"/>
+                <img src="http://i2.kym-cdn.com/entries/icons/original/000/003/549/image.jpeg" width="400" alt="irudia"/>
             </div>
 
             <hr />
