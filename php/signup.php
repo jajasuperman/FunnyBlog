@@ -21,8 +21,7 @@
                                             $_POST["recaptcha_response_field"]);
 
             if (!$resp->is_valid) {
-                die ("The reCAPTCHA wasn't entered correctly. Go back and try it again." .
-                     "(reCAPTCHA said: " . $resp->error . ")");
+                echo "<script type='text/javascript'>alert('reCaptcha gaizki sartu egin duzu');</script>";
             } else {
 
                 $fitx = '../xml/erabiltzaileak.xml';
@@ -44,6 +43,7 @@
                 $domxml->loadXML($xml->asXML());
                 $domxml->save($fitx);
                 
+                echo "<script type='text/javascript'>alert('Kontua sortu duzu!');</script>";
                 header("Location: ../index.php");
             }
         }
