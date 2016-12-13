@@ -1,4 +1,4 @@
-;function egiaztatuSignUp() {
+function egiaztatuSignUp() {
     var erabil = document.getElementById("erabiltzailea").value;
     var email = document.getElementById("email").value;
     var pass = document.getElementById("pasahitza").value;

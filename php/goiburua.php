@@ -14,7 +14,8 @@ else {
     echo "<header class='main' id='h1'>
             <img style='width: 50%;' alt='logo' src='../img/goiburua.png' onclick=\"location.href='../index.php';\"/>
             <div class='userBtnDiv'> 
-                Kaixo". $_SESSION["erabiltzailea"] .":)
+                <label>Kaixo ". $_SESSION["erabiltzailea"] ." :)</label>
+                <button class='userBtn' type='button' onclick=\"location.href='../php/logout.php';\">Irten</button>
             </div>
         </header>";
 }
