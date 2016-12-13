@@ -1,8 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta charset="utf-8" />
-        <title>emoji-picker Demo</title>        
+        <title>Yee</title>        
 
         <link href="../css/cover.css" rel="stylesheet" />
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -30,12 +29,12 @@
 
             <!-- Izenburua -->
             <h2>
-                Lenny Face
+                Yee
             </h2>
             
             <!-- Irudia -->
             <div style="text-align: center;">
-                <img src="http://www.lennyfaces.net/static/og-image.png" width="400" alt="irudia"/>
+                <img src="http://i3.kym-cdn.com/photos/images/newsfeed/000/823/349/06f.gif" width="400" alt="irudia"/>
             </div>
 
             <hr />
@@ -46,24 +45,53 @@
             </h3>
 
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nulla dui, gravida ac neque eu, dapibus fermentum purus. Donec molestie viverra porttitor. In ultricies, dui sit amet pellentesque mattis, sem sapien dapibus mi, quis hendrerit felis ex id turpis. Curabitur mollis dolor velit, vitae consequat leo dapibus ac. Donec sit amet ornare enim. Integer in sollicitudin elit. Sed sagittis, quam quis fringilla commodo, odio nunc pharetra ante, nec tempor augue mi eu eros. Maecenas interdum metus sit amet facilisis imperdiet. Aliquam eleifend vel dolor varius vehicula.
+                Yee Dinosaur Adventure marrazki bizidunetako pelikulatik ateratako onomatopeia bat da. 2010. urtean famatua bilakatu zen interneten eta geroztik ehunka bideo atera dira marrazki bizidun honen parodiak egiten.
             </p>
+
+            <h3>
+                Bideo batzuk
+            </h3>
+
+           <div style="text-align: center;">
+                <object type="application/x-shockwave-flash" style="width:425px; height:349px;" data="https://www.youtube.com/v/q6EoRBvdVPQ">
+                    <param name="movie" value="https://www.youtube.com/v/q6EoRBvdVPQ" />
+                    <param name="allowFullScreen" value="true" />
+                </object>
+            </div>
+
+           <br />
+
+           <div style="text-align: center;">
+                <object type="application/x-shockwave-flash" style="width:425px; height:349px;" data="https://www.youtube.com/v/U49RgwMSHc0">
+                    <param name="movie" value="https://www.youtube.com/v/U49RgwMSHc0" />
+                    <param name="allowFullScreen" value="true" />
+                </object>
+            </div>
 
         </div>
 
         <!-- Iruzkinak -->                
         <?php include '../php/iruzkinakPanel.php'; ?>
 
+        <div id="validator" style="text-align: center;">
+            <a href="http://validator.w3.org/check?uri=referer">
+                <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" id="html" height="31" width="88" />
+            </a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="¡CSS Válido!" id="css" height="31" width="88"/>
+            </a>
+        </div>
+
         <!-- Begin emoji-picker JavaScript -->
-        <script src="../lib/js/nanoscroller.min.js"></script>
-        <script src="../lib/js/tether.min.js"></script>
-        <script src="../lib/js/config.js"></script>
-        <script src="../lib/js/util.js"></script>
-        <script src="../lib/js/jquery.emojiarea.js"></script>
-        <script src="../lib/js/emoji-picker.js"></script>
+        <script type="text/javascript" src="../lib/js/nanoscroller.min.js"></script>
+        <script type="text/javascript" src="../lib/js/tether.min.js"></script>
+        <script type="text/javascript" src="../lib/js/config.js"></script>
+        <script type="text/javascript" src="../lib/js/util.js"></script>
+        <script type="text/javascript" src="../lib/js/jquery.emojiarea.js"></script>
+        <script type="text/javascript" src="../lib/js/emoji-picker.js"></script>
         <!-- End emoji-picker JavaScript -->
 
-        <script>
+        <script type="text/javascript">
             // Emoji aukeraketa
             $(function() {                
                 window.emojiPicker = new EmojiPicker({

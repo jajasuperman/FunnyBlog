@@ -1,8 +1,6 @@
 body {
     /*background: #E0E0E0;*/
     background: url("../img/back.png") repeat center center fixed;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
     background-size: contain;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
     color: #545454;
@@ -25,7 +23,6 @@ input[type=submit], input[type=button], button {
     font-size:18px;
     font-family: 'Courier';
     margin: 0 auto;
-    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 

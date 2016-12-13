@@ -4,7 +4,7 @@ include 'db.php';
 
 $sql = "SELECT * FROM iruzkina WHERE BerriaID=".$_POST['berriaID'];	
 $result = $conn->query($sql);
-
+//echo $sql;
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "

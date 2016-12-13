@@ -1,13 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta charset="utf-8" />
         <title>Login</title>
 
         <link href="../css/style1.css" rel="stylesheet" />
         <link href="../css/style2.css" rel="stylesheet" />
 
-        <script src="../js/egiaztatuLogin.js"></script>
+        <script type="text/javascript" src="../js/egiaztatuLogin.js"></script>
 
         <?php
         include 'db.php';
@@ -45,9 +44,8 @@
     </head>
 
     <body>
-        <header class='main' id='h1'>
-            <a href="../index.php"><img style="width: 50%;" src="../img/goiburua.png" /></a>
-        </header>
+
+        <img style="width: 50%;" src="../img/goiburua.png" onclick="location.href='../index.php'" alt="logo" />
         
         <table>
             <tr>
@@ -72,7 +70,7 @@
                             <label class="col-sm-3" for="erabiltzailea">Erabiltzailea</label>
                         </td>
                         <td width="30%">
-                            <input type="text" id="erabiltzailea" name="erabiltzailea">
+                            <input type="text" id="erabiltzailea" name="erabiltzailea" />
                         </td>
                     </tr>
                     <tr>
@@ -80,7 +78,7 @@
                             <label for="pasahitza">Pasahitza</label>
                         </td>
                         <td>
-                            <input type="password" id="pasahitza" name="pasahitza"><br>
+                            <input type="password" id="pasahitza" name="pasahitza" /><br />
                         </td>
                     </tr>
                 </table>
@@ -94,12 +92,21 @@
                     ?>
 
                     <br />
-                    <input class="btnLogin" name="commit" value="Login" type="submit">
+                    <input class="btnLogin" name="commit" value="Login" type="submit" />
                     <br />
                     <br />
-                    <img src="../img/213.png" alt="rex"> 
+                    <img src="../img/213.png" alt="rex" /> 
                 </div>
             </form>                                    
+        </div>
+
+        <div id="validator" style="text-align: center;">
+            <a href="http://validator.w3.org/check?uri=referer">
+                <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" id="html" height="31" width="88" />
+            </a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="¡CSS Válido!" id="css" height="31" width="88"/>
+            </a>
         </div>
     </body>
 </html>

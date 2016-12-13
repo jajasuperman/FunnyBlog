@@ -9,11 +9,11 @@ if(isset($_POST['id1'])) {
             VALUES(
             DEFAULT,
             '$_POST[id1]', 
-            ".(int)($_SERVER['REQUEST_URI'][22]).", 
+            ".(int)($_SERVER['REQUEST_URI'][12]).", 
             '$_SESSION[erabiltzailea]',
             '".date("Y-m-d H:i:s")."'
             )";
-    echo $sql;
+    //echo $sql;
     if ($conn->query($sql) === TRUE) {
         echo "<script type='text/javascript'>alert('Iruzkina ondo gorde da.');</script>";
     } else {

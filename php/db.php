@@ -1,14 +1,9 @@
 <?php
-/*
+
 $host = 'mysql.hostinger.es';
-$username = 'u882253491_root';
-$password = '1234root';
-$db = 'u882253491_wsra';
-*/
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$db = 'funnyblog';
+$username = 'u669210683_funny';
+$password = '123456';
+$db = 'u669210683_funny';
 
 $conn = new mysqli($host, $username, $password, $db);
 if ($conn->connect_error) {

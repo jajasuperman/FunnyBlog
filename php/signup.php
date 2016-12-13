@@ -1,13 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta charset="utf-8" />
         <title>Sign Up</title>
 
         <link href="../css/style1.css" rel="stylesheet" />
         <link href="../css/style2.css" rel="stylesheet" />
 
-        <script src="../js/egiaztatuSignUp.js"></script>
+        <script type="text/javascript" src="../js/egiaztatuSignUp.js"></script>
 
         <?php
         include 'db.php';
@@ -52,9 +51,7 @@
     </head>
 
     <body>
-        <header class='main' id='h1'>
-            <a href="../index.php"><img style="width: 50%;" src="../img/goiburua.png" /></a>
-        </header>
+        <img style="width: 50%;" src="../img/goiburua.png" onclick="location.href='../index.php'" alt="logo"/>
 
         <table>
             <tr>
@@ -124,6 +121,15 @@
                     <img src="../img/3f2.jpg" alt="rex"> 
                 </div>
             </form>                                    
+        </div>
+
+        <div id="validator" style="text-align: center;">
+            <a href="http://validator.w3.org/check?uri=referer">
+                <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" id="html" height="31" width="88" />
+            </a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="¡CSS Válido!" id="css" height="31" width="88"/>
+            </a>
         </div>
     </body>
 </html>
