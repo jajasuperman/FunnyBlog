@@ -2,6 +2,7 @@ function egiaztatuLogin() {
     var erabil = document.getElementById("erabiltzailea").value;
     var pass = document.getElementById("pasahitza").value;
     
+    // Ikusi balioak hutsak diren
     if(erabil == '' || erabil.length == 0) {
         alert("Ez duzu erabiltzailea sartu");
         return false;

@@ -1,5 +1,7 @@
 <?php
 
+// Datu-basera konektatu
+
 $host = 'mysql.hostinger.es';
 $username = 'u669210683_funny';
 $password = '123456';

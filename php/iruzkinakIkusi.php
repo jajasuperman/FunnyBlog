@@ -1,9 +1,9 @@
 <?php
 
-include 'db.php'; 
+include 'db.php'; // Konektatu
 
 $sql = "SELECT * FROM iruzkina WHERE BerriaID=".$_POST['berriaID'];	
-$result = $conn->query($sql);
+$result = $conn->query($sql); //Datu-baseari eskaera bat egin
 //echo $sql;
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {

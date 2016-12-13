@@ -18,7 +18,7 @@ echo "<div class='box iruzkina'>
 
     <div id='iruzkinak'></div>";
 
-if(isset($_SESSION['erabiltzailea'])) {
+if(isset($_SESSION['erabiltzailea'])) { // Erabiltzailea kautotu behar izan da
     echo "<div id='iruzkinBerria' class='box'>                
             <form name='iruz' id='iruz' method='post' enctype='multipart/form-data' action='".$_SERVER['REQUEST_URI']."'>
                 <p class='lead emoji-picker-container'>

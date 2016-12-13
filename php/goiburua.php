@@ -1,6 +1,6 @@
 <?php
 
-if(!isset($_SESSION["erabiltzailea"])) {
+if(!isset($_SESSION["erabiltzailea"])) { // Erabiltzailea kautotu behar izan da
 
     echo "<img style='width: 50%;' alt='logo' src='../img/goiburua.png' onclick=\"location.href='../index.php';\"/>
           <div class='userBtnDiv'> 

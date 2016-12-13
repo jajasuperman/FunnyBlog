@@ -4,6 +4,8 @@ function egiaztatuSignUp() {
     var pass = document.getElementById("pasahitza").value;
     var pass2 = document.getElementById("pasahitza2").value;
     
+    // Egiaztatu balioak egokiak diren
+    
     if(erabil == '' || erabil.length == 0) {
         alert("Ez duzu erabiltzailea sartu");
         return false;
