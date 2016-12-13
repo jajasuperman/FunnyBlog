@@ -10,13 +10,28 @@
     </head>
 
     <body>
-        <header class='main' id='h1'>
-            <a href='index.html'><img style='width: 50%;' src='img/goiburua.png' alt='logo'/></a>
-            <div class='userBtnDiv'> 
-                <button class='userBtn' type='button' onclick="location.href='php/login.php';">Login</button>         
-                <button class='userBtn' type='button' onclick="location.href='php/signup.php';">Sign Up</button>
-            </div>
-        </header>
+        <?php 
+        session_start(); 
+        if(!isset($_SESSION["erabiltzailea"])) {
+
+            echo "<header class='main' id='h1'>
+                    <img style='width: 50%;' alt='logo' src='img/goiburua.png' onclick=\"location.href='index.php';\"/>
+                    <div class='userBtnDiv'> 
+                        <button class='userBtn' type='button' onclick=\"location.href='php/login.php';\">Login</button>            
+                        <button class='userBtn' type='button' onclick=\"location.href='php/signup.php';\">Sign Up</button>
+                    </div>
+                </header>";
+        }
+        else {
+            echo "<header class='main' id='h1'>
+                    <img style='width: 50%;' alt='logo' src='img/goiburua.png' onclick=\"location.href='index.php';\"/>
+                    <div class='userBtnDiv'> 
+                        <label>Kaixo ". $_SESSION["erabiltzailea"] ." :)</label>
+                        <button class='userBtn' type='button' onclick=\"location.href='php/logout.php';\">Irten</button>
+                    </div>
+                </header>";
+        }
+        ?>
 
         <a href="orriak/orri1.php">
             <div class="box index" style="text-align: center;">

@@ -32,7 +32,7 @@
                     if (($erabiltzaile->Erabiltzaile) == ($_POST["erabiltzailea"]) && ($erabiltzaile->Pasahitza) == ($_POST["pasahitza"])) {
                         session_start();
                         $_SESSION['erabiltzailea'] = $_POST["erabiltzailea"];
-                        header("Location: ../index.html");
+                        header("Location: ../index.php");
                     }
                     else{
                         echo 'MEGAERROR';
@@ -46,7 +46,7 @@
 
     <body>
         <header class='main' id='h1'>
-            <a href="../index.html"><img style="width: 50%;" src="../img/goiburua.png" /></a>
+            <a href="../index.php"><img style="width: 50%;" src="../img/goiburua.png" /></a>
         </header>
         
         <table>

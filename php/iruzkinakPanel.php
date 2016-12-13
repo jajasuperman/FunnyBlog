@@ -19,7 +19,7 @@ echo "<div class='box iruzkina'>
     <div id='iruzkinak'></div>";
 
 if(isset($_SESSION['erabiltzailea'])) {
-    echo "<div id='iruzkinBerria' class='box comment'>                
+    echo "<div id='iruzkinBerria' class='box'>                
             <form name='iruz' id='iruz' method='post' enctype='multipart/form-data' action='".$_SERVER['REQUEST_URI']."'>
                 <p class='lead emoji-picker-container'>
                     <textarea name='id1' class='form-control textarea-control' rows='3' placeholder='Iruzkina idatzi...' data-emojiable='true' data-emoji-input='unicode'></textarea>
@@ -29,7 +29,7 @@ if(isset($_SESSION['erabiltzailea'])) {
         </div>";
 }
 else {
-    echo "<div id='iruzkinBerria' class='box comment'>                
+    echo "<div id='iruzkinBerria' class='box'>                
             <p>
                 Iruzkinak idazteko <a href='../php/signup.php'>kontua sortu</a> edo <a href='../php/login.php'>kautotu</a> zaitez.
             </p>           
